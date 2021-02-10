@@ -2,13 +2,14 @@ import pygame, random
 
 pygame.init()
 
+clock = pygame.time.Clock()
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("FLAPPY BIRDS")
 
 x = 200
 y = 300
 jump = False
-speed = 0.5
+speed = 1
 
 def draw_circle(x, y):
     pygame.draw.circle(screen, (255, 0, 0), (x, y), 30)
@@ -57,7 +58,7 @@ while running:
 
     for i in Pipes:
         draw_pipe(i)
-        i[0] -= 2
+        i[0] -= 4
         if i[0] < 0:
             i[0] = 800
             i[3] = random.randint(50, 250)
@@ -72,6 +73,7 @@ while running:
                 score+=1
                 print(score)
 
+    clock.tick(30)
     print_score(score)
     pygame.display.update()
 
