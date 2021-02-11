@@ -27,7 +27,7 @@ screen = pygame.display.set_mode((sw, sh))
 black_list = pygame.sprite.Group()
 all_sprite_list = pygame.sprite.Group()
 
-for i in range(10):
+for i in range(random.randint(10,30)):
     black = Block(blackC, 30, 30)
 
     black.rect.x = random.randrange(sw)
@@ -50,6 +50,12 @@ while running:
 
     pos = pygame.mouse.get_pos()
     # print(pos)
+
+    black_hit_list = pygame.sprite.spritecollide(player, black_list, True)
+
+    for black in black_hit_list:
+        score += 1
+        print(score)
 
     player.rect.x = pos[0]
     player.rect.y = pos[1]
