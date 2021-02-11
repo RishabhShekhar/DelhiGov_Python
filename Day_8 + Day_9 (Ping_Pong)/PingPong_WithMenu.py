@@ -16,7 +16,7 @@ opponent_speed = 6
 
 score_time = None
 
-def start_game(OS):
+def start_game(OppSp):
     global score_time
     bg_color = pygame.Color('grey12')
 
@@ -29,7 +29,7 @@ def start_game(OS):
     ball_speed_y = 6 * random.choice((-1, 1))
 
     player_speed = 0
-    opponent_speed = OS
+    opponent_speed = OppSp
 
     player_score = 0
     opponent_score = 0
