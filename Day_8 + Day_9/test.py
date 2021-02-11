@@ -6,7 +6,8 @@ sw = 800
 sh = 600
 screen = pygame.display.set_mode((sw, sh))
 
-def bluescreen(clock):
+def bluescreen():
+    global sw, sh
     bluerunning = True
     while bluerunning:
         screen.fill((0, 0, 255))
@@ -14,7 +15,7 @@ def bluescreen(clock):
             if event.type == pygame.QUIT:
                 bluerunning = False
 
-    pygame.display.update()
+        pygame.display.update()
 
 running = True
 while running:
