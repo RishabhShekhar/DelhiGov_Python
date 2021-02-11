@@ -7,7 +7,6 @@ sh = 600
 screen = pygame.display.set_mode((sw, sh))
 
 def bluescreen():
-    global sw, sh
     bluerunning = True
     while bluerunning:
         screen.fill((0, 0, 255))
