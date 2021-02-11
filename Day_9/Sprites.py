@@ -27,7 +27,7 @@ screen = pygame.display.set_mode((sw, sh))
 black_list = pygame.sprite.Group()
 all_sprite_list = pygame.sprite.Group()
 
-for i in range(random.randint(10,30)):
+for i in range(random.randint(10, 30)):
     black = Block(blackC, 30, 30)
 
     black.rect.x = random.randrange(sw)
@@ -63,4 +63,5 @@ while running:
     # black_list.draw(screen)
     all_sprite_list.draw(screen)
 
+    clock.tick(20)
     pygame.display.update()
