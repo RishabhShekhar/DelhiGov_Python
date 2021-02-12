@@ -140,5 +140,6 @@ while MainRun:
     Start = font_64.render("START", True, (0, 0, 200))
     screen.blit(Start, (sw//2-80, sh-100))
 
+    clock.tick(30)
     pygame.display.update()
 
