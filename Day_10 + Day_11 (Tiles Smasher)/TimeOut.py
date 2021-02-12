@@ -28,8 +28,6 @@ def print_score(scr):
 def isClicked(cxy, cmx, cmy):
     global score
     if cxy[0] < cmx < cxy[0] + 100 and cxy[1] < cmy < cxy[1] + 100:
-        score += 1
-        print(score)
         return True
     return False
 
@@ -43,7 +41,7 @@ while TimeOut:
         if event.type == pygame.QUIT:
             TimeOut = False
         if event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:
+            if event.button == 1: # LEFT CLICK
                 clicked = True
         if event.type == pygame.MOUSEBUTTONUP:
             if event.button == 1:
@@ -62,6 +60,7 @@ while TimeOut:
             pygame.draw.rect(screen, (0, 255, 0), box)
             xy = [random.randint(0, 700), random.randint(0, 500)]
             start = pygame.time.get_ticks()
+            score += 1
 
     box = generate_box(xy[0], xy[1])
     pygame.draw.rect(screen, (255, 0, 0), box)
