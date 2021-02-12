@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61d262d7-2df4-4ef3-8724-f19ea3d1a1a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TimeOut.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mouse_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/mouse_events.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TimeOut.py" beforeDir="false" afterPath="$PROJECT_DIR$/TimeOut.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +37,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Python.mouse_events">
+  <component name="RunManager" selected="Python.TimeOut">
     <configuration name="TileSmasher" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Day_10 + Day_11 (Tiles Smasher)" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -143,7 +141,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1613106024645</updated>
-      <workItem from="1613106025956" duration="2066000" />
+      <workItem from="1613106025956" duration="5264000" />
     </task>
     <servers />
   </component>
@@ -163,6 +161,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Day_10___Day_11__Tiles_Smasher_$main.coverage" NAME="main Coverage Results" MODIFIED="1613108543222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Python_Games/Tiles_Smasher" />
+    <SUITE FILE_PATH="coverage/Day_10___Day_11__Tiles_Smasher_$TimeOut.coverage" NAME="TimeOut Coverage Results" MODIFIED="1613113274997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Day_10___Day_11__Tiles_Smasher_$mouse_events.coverage" NAME="mouse_events Coverage Results" MODIFIED="1613110065985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
