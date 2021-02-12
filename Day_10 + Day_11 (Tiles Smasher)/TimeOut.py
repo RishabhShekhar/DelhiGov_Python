@@ -12,7 +12,7 @@ pygame.display.set_caption("TILES")
 
 game_font = pygame.font.Font("freesansbold.ttf", 32)
 
-xy = [random.randint(0,700), random.randint(0,500)]
+xy = [random.randint(0, 700), random.randint(0, 500)]
 
 score = 0
 
@@ -24,13 +24,15 @@ def generate_box(x, y):
 def print_score(scr):
     screen.blit(game_font.render("SCORE: " + str(scr), True, (0, 0, 0)), (10, 10))
 
+
 def isClicked(cxy, cmx, cmy):
     global score
-    if cxy[0]< cmx < cxy[0] + 100 and cxy[1] < cmy <cxy[1] + 100:
+    if cxy[0] < cmx < cxy[0] + 100 and cxy[1] < cmy < cxy[1] + 100:
         score += 1
         print(score)
         return True
     return False
+
 
 clicked = False
 TimeOut = True
@@ -51,12 +53,12 @@ while TimeOut:
     # BOX MOVEMENT
     if current_time - start > 1000:
         start = pygame.time.get_ticks()
-        xy = [random.randint(0,700), random.randint(0,500)]
+        xy = [random.randint(0, 700), random.randint(0, 500)]
 
     # DETECTION
     mx, my = pygame.mouse.get_pos()
     if clicked:
-        if (current_time-start < 1000) and isClicked(xy, mx, my):
+        if (current_time - start < 1000) and isClicked(xy, mx, my):
             pygame.draw.rect(screen, (0, 255, 0), box)
             xy = [random.randint(0, 700), random.randint(0, 500)]
             start = pygame.time.get_ticks()
