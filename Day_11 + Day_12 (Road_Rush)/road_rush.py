@@ -124,7 +124,7 @@ while running:
 
     # STONE
     game_time = pygame.time.get_ticks()
-    if game_time - start_time > 1000 and state == 0:
+    if game_time - start_time > 1000 and state == 0 and health_piece == 0 and game==1:
         state = 1
         stone_x = random.randint(250, 350)
         stone_y = 240
@@ -147,6 +147,36 @@ while running:
             state = 0
             score += 1
             start_time = pygame.time.get_ticks()
+
+    game_life_time = pygame.time.get_ticks()
+    if game_life_time - life_time > 10000 or health_piece == 1:
+        health_piece = 1
+        game = 0
+        health_y += 5
+        if health_x < 280:
+            chng = -4
+        elif health_x > 330:
+            chng = 4
+        health_x += chng
+        screen.blit(health, (health_x, health_y))
+        collided_health = isCollided(car_x, car_y, health_x, health_y)
+        if collided_health:
+            score += 2
+            life += 1
+            game = 1
+            if life > 5:
+                life = 5
+            health_piece = 0
+            health_x = random.randint(250, 350)
+            health_y = 240
+
+        if health_y >= 400:
+            game = 1
+            health_x = random.randint(250, 350)
+            health_y = 240
+
+        life_time = pygame.time.get_ticks()
+
 
 
     screen.blit(car, (car_x, car_y))
