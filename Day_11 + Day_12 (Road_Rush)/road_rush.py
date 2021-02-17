@@ -5,6 +5,7 @@ import pygame
 import random
 
 pygame.init()
+clock = pygame.time.Clock()
 
 screen_width = 640
 screen_height = 480
@@ -90,9 +91,19 @@ while running:
     #     if road_pos <= 0:
     #         road_pos = texture_position_threshold
 
-    road_pos += road_accelaration
-    if road_pos >= texture_position_threshold:
-        road_pos = 0
+    if keys[pygame.K_RIGHT]:
+        car_x += 5
+        if car_x >= 450:
+            car_x -= 5
+    if keys[pygame.K_LEFT]:
+        car_x -= 5
+        if car_x <= 50:
+            car_x += 5
+
+    if life > 0:
+        road_pos += road_accelaration
+        if road_pos >= texture_position_threshold:
+            road_pos = 0
 
     texture_position = road_pos
     dz = 0
@@ -111,8 +122,36 @@ while running:
         if texture_position >= texture_position_threshold:
             texture_position = 0
 
+    # STONE
+    game_time = pygame.time.get_ticks()
+    if game_time - start_time > 1000 and state == 0:
+        state = 1
+        stone_x = random.randint(250, 350)
+        stone_y = 240
+        chng = 0
+
+    if state == 1 and life > 0:
+        stone_y += 5
+        if stone_x < 280:
+            chng = -4
+        elif stone_x > 330:
+            chng = 4
+        stone_x += chng
+        screen.blit(rock, (stone_x, stone_y))
+        collide = isCollided(car_x, car_y, stone_x, stone_y)
+        if collide:
+            life -= 1
+            state = 0
+            start_time = pygame.time.get_ticks()
+        if stone_y >= 480:
+            state = 0
+            score += 1
+            start_time = pygame.time.get_ticks()
+
+
     screen.blit(car, (car_x, car_y))
     screen.blit(truck, (270, 210))
     print_score(score)
     draw_lives(life)
+    clock.tick(30)
     pygame.display.update()
