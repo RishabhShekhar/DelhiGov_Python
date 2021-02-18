@@ -34,8 +34,13 @@ def threaded_client(conn):
         except:
             break
 
+    print("Lost Connection")
+    conn.close()
+
+currentPlayer = 0
 while True:
     conn, addr = s.accept()
     print("Connected to: ", addr)
 
-    start_new_thread(threaded_client(conn))
+    start_new_thread(threaded_client, (conn,))
+    currentPlayer += 1
