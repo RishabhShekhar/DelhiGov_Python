@@ -8,7 +8,6 @@ sh = 500
 screen = pygame.display.set_mode((sw, sh))
 pygame.display.set_caption("Client")
 
-clientNumber = 0
 
 class Player():
     def __init__(self, x, y, width, height, color):
